@@ -14,6 +14,11 @@
       font-size: 1.25em;
     }
   </style>
+    <!-- Calendly styles (required for popup) -->
+  <link
+    href="https://assets.calendly.com/assets/external/widget.css"
+    rel="stylesheet"
+  />
 </head>
 <body class="font-sans text-white bg-black">
 
@@ -204,14 +209,13 @@
     });
   </script>
 
-  <!-- 1) Load Calendly synchronously (remove async)    -->
+ <!-- Calendly JS (no async) -->
   <script src="https://assets.calendly.com/assets/external/widget.js"></script>
-
-  <!-- 2) Only attach handlers once DOM (and Calendly) are ready -->
+  <!-- Attach handlers once DOM & Calendly are ready -->
   <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.book-call').forEach(btn => {
-        btn.addEventListener('click', function(e) {
+    window.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.book-call').forEach((btn) => {
+        btn.addEventListener('click', function (e) {
           e.preventDefault();
           Calendly.initPopupWidget({
             url: 'https://calendly.com/jakabbenedek2002/discovery-call'
@@ -220,6 +224,5 @@
       });
     });
   </script>
-
 </body>
 </html>
