@@ -136,5 +136,19 @@
       setInterval(() => goToSlide(currentSlide + 1), 6000);
     });
   </script>
+  
+  <!-- Calendly popup widget -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('book-call-btn');
+      if(btn){
+        btn.addEventListener('click', function(e){
+          e.preventDefault();
+          Calendly.initPopupWidget({ url: 'https://calendly.com/jakabbenedek2002/discovery-call' });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
