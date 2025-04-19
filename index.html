@@ -6,6 +6,8 @@
   <title>CrimsonLens | Visual Storytelling & AI Content</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* ↑ Increase all text by 25% */
+    html { font-size: 125%; }
     :root { --burgundy: #e0003c; }
   </style>
 </head>
@@ -31,13 +33,10 @@
   </header>
 
   <!-- HERO -->
-  <section
-    class="relative flex items-center justify-center min-h-screen pt-24 text-center bg-center bg-cover"
-    style="background-image:url('hero_background.webp');"
-  >
+  <section class="relative flex items-center justify-center min-h-screen pt-24 text-center bg-center bg-cover"
+           style="background-image:url('hero_background.webp');">
     <div class="absolute inset-0 bg-black/70" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl px-6">
-      <!-- Reverted back to text-4xl md:text-6xl -->
       <h1 class="mb-3 text-4xl font-bold leading-tight md:text-6xl">
         Visual Storytelling Meets<br>
         <span class="text-[var(--burgundy)]">AI‑Powered Marketing</span>
@@ -85,12 +84,13 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- TESTIMONIALS (5 slides) -->
   <section id="testimonials" class="py-24 bg-neutral-900">
     <div class="max-w-6xl px-6 mx-auto">
       <h2 class="mb-12 text-3xl font-semibold text-center md:text-4xl">What Clients Say</h2>
       <div class="relative overflow-hidden">
         <div id="carousel" class="flex transition-transform duration-700" style="will-change: transform;">
+          <!-- Slide 1 -->
           <div class="flex-shrink-0 w-full px-8">
             <blockquote class="text-center">
               <p class="text-xl italic leading-relaxed md:text-2xl">
@@ -99,6 +99,7 @@
               <footer class="mt-4 text-gray-400">— Adam K., CEO, EN‑CO Software</footer>
             </blockquote>
           </div>
+          <!-- Slide 2 -->
           <div class="flex-shrink-0 w-full px-8">
             <blockquote class="text-center">
               <p class="text-xl italic leading-relaxed md:text-2xl">
@@ -107,6 +108,7 @@
               <footer class="mt-4 text-gray-400">— István P., Director, Aeropark Budapest</footer>
             </blockquote>
           </div>
+          <!-- Slide 3 -->
           <div class="flex-shrink-0 w-full px-8">
             <blockquote class="text-center">
               <p class="text-xl italic leading-relaxed md:text-2xl">
@@ -115,12 +117,33 @@
               <footer class="mt-4 text-gray-400">— Nóra V., Marketing Lead, Sziget Festival</footer>
             </blockquote>
           </div>
+          <!-- Slide 4 -->
+          <div class="flex-shrink-0 w-full px-8">
+            <blockquote class="text-center">
+              <p class="text-xl italic leading-relaxed md:text-2xl">
+                “Their motion graphics took our product launch from ordinary to unforgettable.”
+              </p>
+              <footer class="mt-4 text-gray-400">— Luca R., Product Manager, TechNova</footer>
+            </blockquote>
+          </div>
+          <!-- Slide 5 -->
+          <div class="flex-shrink-0 w-full px-8">
+            <blockquote class="text-center">
+              <p class="text-xl italic leading-relaxed md:text-2xl">
+                “Professional, creative, and lightning‑fast — the ideal content partner.”
+              </p>
+              <footer class="mt-4 text-gray-400">— Marianna S., CMO, VentureWorks</footer>
+            </blockquote>
+          </div>
         </div>
       </div>
+      <!-- five dots -->
       <div class="flex justify-center gap-2 mt-8">
         <button data-slide="0" class="dot w-3 h-3 rounded-full bg-[var(--burgundy)]" aria-label="Slide 1"></button>
         <button data-slide="1" class="dot w-3 h-3 rounded-full bg-gray-500" aria-label="Slide 2"></button>
         <button data-slide="2" class="dot w-3 h-3 rounded-full bg-gray-500" aria-label="Slide 3"></button>
+        <button data-slide="3" class="dot w-3 h-3 rounded-full bg-gray-500" aria-label="Slide 4"></button>
+        <button data-slide="4" class="dot w-3 h-3 rounded-full bg-gray-500" aria-label="Slide 5"></button>
       </div>
     </div>
   </section>
