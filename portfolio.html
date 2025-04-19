@@ -11,20 +11,24 @@
   <style>
     :root { --burgundy: #e0003c; }
 
-    /* Portrait‑oriented responsive background */
+    /* Mobile (portrait) fallback */
     #portfolio-bg {
       background-image: url('portfolio_background.webp');
       background-size: cover;
       background-position: center;
     }
+
+    /* Tablet */
     @media (min-width: 640px) {
       #portfolio-bg {
         background-image: url('portfolio_background_1080x1920.webp');
       }
     }
+
+    /* Desktop (horizontal) */
     @media (min-width: 1024px) {
       #portfolio-bg {
-        background-image: url('portfolio_background_1440x2560.webp');
+        background-image: url('portfolio_backround_horizontal.webp');
       }
     }
   </style>
@@ -49,7 +53,7 @@
     </nav>
   </header>
 
-  <!-- PORTFOLIO CONTENT WITH PORTRAIT BACKGROUND -->
+  <!-- PORTFOLIO CONTENT WITH RESPONSIVE BACKGROUND -->
   <div id="portfolio-bg" class="min-h-screen pt-32 pb-16">
 
     <!-- Page Title & Intro -->
