@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CrimsonLens | Visual Storytelling & AI Content</title>
+  <title>CrimsonLens | Visual Storytelling & AI Content</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -14,8 +14,7 @@
 </head>
 <body class="font-sans text-white bg-black">
 
-  <!-- ▸ NAVBAR
-  --------------------------------------------------------------------------- -->
+  <!-- ▸ NAVIGATION -------------------------------------------------------------------- -->
   <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-lg">
     <a href="#" class="flex items-center gap-2 group" aria-label="Homepage">
       <img src="logo.webp" alt="CrimsonLens logo" class="w-10 h-10 select-none" />
@@ -24,25 +23,24 @@
       </span>
     </a>
 
-    <!-- main nav -->
     <nav class="hidden items-center gap-6 text-sm md:flex">
-      <a href="#services" class="transition-colors hover:text-[var(--burgundy)]">Services</a>
-      <a href="#testimonials" class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
+      <a href="#services"      class="transition-colors hover:text-[var(--burgundy)]">Services</a>
+      <a href="#testimonials"  class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
+      <!-- Calendly trigger in nav -->
       <a href="#" class="book-call ml-8 px-6 py-3 transition rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black">
         Book&nbsp;a&nbsp;Call
       </a>
     </nav>
   </header>
 
-  <!-- ▸ HERO
-  --------------------------------------------------------------------------- -->
+  <!-- ▸ HERO -------------------------------------------------------------------------- -->
   <section class="relative flex items-center justify-center min-h-screen pt-24 text-center bg-center bg-cover"
            style="background-image:url('hero_background.webp');">
-    <!-- (hero overlay removed) -->
+    <!-- (no black overlay on hero now) -->
     <div class="relative z-10 max-w-3xl px-6">
       <h1 class="mb-3 text-4xl font-bold leading-tight md:text-6xl">
         Visual Storytelling Meets<br>
-        <span class="text-[var(--burgundy)]">AI‑Powered Marketing</span>
+        <span class="text-[var(--burgundy)]">AI‑Powered Marketing</span>
       </h1>
       <h2 class="mb-8 text-xl font-medium text-gray-200 md:text-2xl">
         Ignite emotion. Inspire action. Accelerate growth.
@@ -53,7 +51,7 @@
           View&nbsp;Portfolio
         </a>
 
-        <!-- Calendly trigger -->
+        <!-- Calendly trigger in hero -->
         <a href="#" class="book-call px-6 py-3 transition rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black">
           Book&nbsp;a&nbsp;Call
         </a>
@@ -61,24 +59,93 @@
     </div>
   </section>
 
-  <!-- ▸ SERVICES  (unchanged) -->
-  <!-- ...................................................................... -->
+  <!-- ▸ SERVICES ----------------------------------------------------------------------- -->
   <section id="services" class="py-24 bg-black">
-    <!-- ... services content exactly as before ... -->
+    <div class="max-w-6xl px-6 mx-auto">
+      <h2 class="mb-16 text-3xl font-semibold text-center md:text-4xl">Services</h2>
+
+      <div class="grid gap-12 md:grid-cols-3">
+        <!-- Service card -->
+        <div class="relative p-8 overflow-hidden transition transform bg-neutral-900 rounded-3xl shadow-lg group hover:-translate-y-2">
+          <div class="absolute inset-0 opacity-15 group-hover:scale-110 transition-transform"
+               style="background:linear-gradient(135deg,var(--burgundy),transparent 60%)"></div>
+          <h3 class="mb-4 text-2xl font-medium">Insight‑Driven Content Strategy</h3>
+          <p class="text-gray-300">Deep audience research, keyword mapping and structured content calendars.</p>
+        </div>
+
+        <!-- Service card -->
+        <div class="relative p-8 overflow-hidden transition transform bg-neutral-900 rounded-3xl shadow-lg group hover:-translate-y-2">
+          <div class="absolute inset-0 opacity-15 group-hover:scale-110 transition-transform"
+               style="background:linear-gradient(135deg,var(--burgundy),transparent 60%)"></div>
+          <h3 class="mb-4 text-2xl font-medium">Photo &amp; Video Production</h3>
+          <p class="text-gray-300">High‑impact visuals from concept to final edit—studio, aerial and documentary styles.</p>
+        </div>
+
+        <!-- Service card -->
+        <div class="relative p-8 overflow-hidden transition transform bg-neutral-900 rounded-3xl shadow-lg group hover:-translate-y-2">
+          <div class="absolute inset-0 opacity-15 group-hover:scale-110 transition-transform"
+               style="background:linear-gradient(135deg,var(--burgundy),transparent 60%)"></div>
+          <h3 class="mb-4 text-2xl font-medium">Next‑Gen Visual Effects</h3>
+          <p class="text-gray-300">Custom graphics and animations that elevate campaigns and drive engagement.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ▸ TESTIMONIALS  (unchanged) -->
-  <!-- ...................................................................... -->
+  <!-- ▸ TESTIMONIALS with CAROUSEL ----------------------------------------------------- -->
   <section id="testimonials" class="py-24 bg-neutral-900">
-    <!-- ... carousel + dots exactly as before ... -->
+    <div class="max-w-6xl px-6 mx-auto">
+      <h2 class="mb-12 text-3xl font-semibold text-center md:text-4xl">What Clients Say</h2>
+
+      <!-- slider viewport -->
+      <div class="relative overflow-hidden">
+        <div id="carousel" class="flex transition-transform duration-700" style="will-change: transform;">
+          <!-- Slide 1 -->
+          <div class="flex-shrink-0 w-full px-8">
+            <blockquote class="text-center">
+              <p class="text-xl italic leading-relaxed md:text-2xl">
+                “CrimsonLens’ insight‑driven strategy grew our inbound leads by 38 % in three months.”
+              </p>
+              <footer class="mt-4 text-gray-400">— Adam K., CEO, EN‑CO Software</footer>
+            </blockquote>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="flex-shrink-0 w-full px-8">
+            <blockquote class="text-center">
+              <p class="text-xl italic leading-relaxed md:text-2xl">
+                “Their aerial videos went viral and doubled our foot traffic.”
+              </p>
+              <footer class="mt-4 text-gray-400">— Istvan P., Director, Aeropark Budapest</footer>
+            </blockquote>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="flex-shrink-0 w-full px-8">
+            <blockquote class="text-center">
+              <p class="text-xl italic leading-relaxed md:text-2xl">
+                “The visuals made our ad campaign look like a million‑euro production.”
+              </p>
+              <footer class="mt-4 text-gray-400">— Nora V., Marketing Lead, Sziget Festival</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- dots -->
+      <div class="flex justify-center gap-2 mt-8">
+        <button data-slide="0" class="dot w-3 h-3 rounded-full bg-[var(--burgundy)]" aria-label="Slide 1"></button>
+        <button data-slide="1" class="dot w-3 h-3 rounded-full bg-gray-500"         aria-label="Slide 2"></button>
+        <button data-slide="2" class="dot w-3 h-3 rounded-full bg-gray-500"         aria-label="Slide 3"></button>
+      </div>
+    </div>
   </section>
 
-  <!-- ▸ CONTACT CTA
-  --------------------------------------------------------------------------- -->
+  <!-- ▸ CONTACT CTA ------------------------------------------------------------------- -->
   <section id="contact"
            class="relative py-24 text-center bg-cover bg-center"
            style="background-image:url('contact_background.webp');">
-    <!-- black overlay lives HERE, not in the hero -->
+    <!-- black overlay (40 % opacity) -->
     <div class="absolute inset-0 bg-black opacity-40" aria-hidden="true"></div>
 
     <div class="relative z-10">
@@ -87,19 +154,19 @@
         Let’s craft visual stories and data‑powered campaigns that move your audience—and your bottom line.
       </p>
 
-      <!-- Calendly trigger -->
+      <!-- Calendly trigger in contact section -->
       <a href="#" class="book-call px-8 py-4 transition rounded-full shadow-lg bg-[var(--burgundy)] hover:bg-white hover:text-black">
         Book&nbsp;a&nbsp;Call
       </a>
     </div>
   </section>
 
-  <!-- ▸ FOOTER -->
+  <!-- ▸ FOOTER ------------------------------------------------------------------------ -->
   <footer class="py-6 text-sm text-center bg-neutral-900 text-gray-500">
     © 2025 CrimsonLens. All rights reserved.
   </footer>
 
-  <!-- ▸ CAROUSEL SCRIPT  (exactly as before) -->
+  <!-- ▸ CAROUSEL SCRIPT --------------------------------------------------------------- -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const carousel = document.getElementById('carousel');
@@ -107,28 +174,28 @@
       let current    = 0;
       const total    = carousel.children.length;
 
-      function updateDots(i){
-        dots.forEach((d, idx)=>{
-          d.classList.toggle('bg-[var(--burgundy)]', idx===i);
-          d.classList.toggle('bg-gray-500', idx!==i);
+      function updateDots(i) {
+        dots.forEach((d, idx) => {
+          d.classList.toggle('bg-[var(--burgundy)]', idx === i);
+          d.classList.toggle('bg-gray-500',         idx !== i);
         });
       }
-      function go(i){
-        current = (i+total)%total;
-        carousel.style.transform = `translateX(-${current*100}%)`;
+      function go(i) {
+        current = (i + total) % total;
+        carousel.style.transform = `translateX(-${current * 100}%)`;
         updateDots(current);
       }
-      dots.forEach((d,i)=>d.addEventListener('click',()=>go(i)));
-      setInterval(()=>go(current+1), 6000);
+      dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+      setInterval(() => go(current + 1), 6000);  // auto-play every 6 s
     });
   </script>
 
-  <!-- ▸ CALENDLY POPUP (works for every .book-call link) -->
+  <!-- ▸ CALENDLY POPUP SCRIPT --------------------------------------------------------- -->
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.book-call').forEach(link => {
-        link.addEventListener('click', e => {
+      document.querySelectorAll('.book-call').forEach(btn => {
+        btn.addEventListener('click', e => {
           e.preventDefault();
           Calendly.initPopupWidget({
             url: 'https://calendly.com/jakabbenedek2002/discovery-call'
