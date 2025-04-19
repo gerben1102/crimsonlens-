@@ -9,97 +9,171 @@
     :root { --burgundy: #e0003c; }
   </style>
 </head>
+<body
+  class="font-sans text-white"
+  style="background-image:url('portfolio_background.webp'); background-size:cover; background-position:center;"
+>
 
-<body class="font-sans text-white bg-black">
-  <!-- Header -->
-  <header class="pt-24 text-center">
-    <h1 class="text-4xl font-bold mb-4">Selected Works</h1>
-    <p class="text-gray-400 mb-12 px-6 max-w-2xl mx-auto">
-      A curated collection blending storytelling, strategy, and visual craft.
-    </p>
+  <!-- NAVIGATION (same as home) -->
+  <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-lg">
+    <a href="index.html" class="flex items-center gap-2 group" aria-label="Homepage">
+      <img src="logo.webp" alt="CrimsonLens logo" class="w-10 h-10 select-none" />
+      <span class="text-xl font-semibold tracking-wide select-none">
+        <span class="text-white">Crimson</span><span class="text-[var(--burgundy)]">Lens</span>
+      </span>
+    </a>
+    <nav class="hidden items-center gap-6 text-sm md:flex">
+      <a href="index.html#services"     class="transition-colors hover:text-[var(--burgundy)]">Services</a>
+      <a href="index.html#testimonials" class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
+      <a href="index.html#contact"      class="book-call ml-8 px-6 py-3 transition rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black">
+        Book&nbsp;a&nbsp;Call
+      </a>
+    </nav>
   </header>
 
-  <!-- Grid Gallery -->
-  <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-    
-    <!-- Project 1 -->
-    <a href="#" class="relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform">
-      <img src="project1.webp" alt="Project 1" class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
+  <!-- PAGE TITLE -->
+  <div class="pt-32 text-center">
+    <h1 class="text-4xl font-bold mb-4">Selected Works</h1>
+    <p class="text-gray-300 mb-12 px-6 max-w-2xl mx-auto">
+      A curated collection to spark ideas—click any project to see it in motion.
+    </p>
+  </div>
+
+  <!-- GRID GALLERY -->
+  <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-16">
+    <!-- repeat for x = 1..7 -->
+    <!-- PROJECT 1 -->
+    <a href="#"
+       class="project-item relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform"
+       data-video="project_video_1.webm"
+    >
+      <img src="project1.webp"
+           alt="Project 1 thumbnail"
+           class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity"
+      />
       <div class="absolute bottom-0 left-0 right-0 p-4 bg-black/50">
-        <h3 class="text-lg font-semibold">Brand Film - NovaTech</h3>
+        <h3 class="text-lg font-semibold">Brand Film – NovaTech</h3>
       </div>
     </a>
 
-    <!-- Project 2 -->
-    <a href="#" class="relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform">
-      <img src="project2.webp" alt="Project 2" class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
+    <!-- PROJECT 2 -->
+    <a href="#" class="project-item relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform"
+       data-video="project_video_2.webm"
+    >
+      <img src="project2.webp" alt="Project 2 thumbnail"
+           class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
       <div class="absolute bottom-0 left-0 right-0 p-4 bg-black/50">
-        <h3 class="text-lg font-semibold">Event Aftermovie - Sziget Festival</h3>
+        <h3 class="text-lg font-semibold">Event Aftermovie – Sziget Festival</h3>
       </div>
     </a>
 
-    <!-- Project 3 -->
-    <a href="#" class="relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform">
-      <img src="project3.webp" alt="Project 3" class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
+    <!-- PROJECT 3 -->
+    <a href="#" class="project-item relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform"
+       data-video="project_video_3.webm"
+    >
+      <img src="project3.webp" alt="Project 3 thumbnail"
+           class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
       <div class="absolute bottom-0 left-0 right-0 p-4 bg-black/50">
-        <h3 class="text-lg font-semibold">Photography Series - Budapest Streets</h3>
+        <h3 class="text-lg font-semibold">Photography Series – Budapest Streets</h3>
       </div>
     </a>
 
-    <!-- Project 4 -->
-    <a href="#" class="relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform">
-      <img src="project4.webp" alt="Project 4" class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
+    <!-- PROJECT 4 -->
+    <a href="#" class="project-item relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform"
+       data-video="project_video_4.webm"
+    >
+      <img src="project4.webp" alt="Project 4 thumbnail"
+           class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
       <div class="absolute bottom-0 left-0 right-0 p-4 bg-black/50">
-        <h3 class="text-lg font-semibold">Drone Footage - Aeropark Campaign</h3>
+        <h3 class="text-lg font-semibold">Drone Footage – Aeropark Campaign</h3>
       </div>
     </a>
 
-    <!-- Project 5 -->
-    <a href="#" class="relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform">
-      <img src="project5.webp" alt="Project 5" class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
+    <!-- PROJECT 5 -->
+    <a href="#" class="project-item relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform"
+       data-video="project_video_5.webm"
+    >
+      <img src="project5.webp" alt="Project 5 thumbnail"
+           class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
       <div class="absolute bottom-0 left-0 right-0 p-4 bg-black/50">
-        <h3 class="text-lg font-semibold">Product Promo - VeloSmart</h3>
+        <h3 class="text-lg font-semibold">Product Promo – VeloSmart</h3>
       </div>
     </a>
 
-    <!-- Project 6 -->
-    <a href="#" class="relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform">
-      <img src="project6.webp" alt="Project 6" class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
+    <!-- PROJECT 6 -->
+    <a href="#" class="project-item relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform"
+       data-video="project_video_6.webm"
+    >
+      <img src="project6.webp" alt="Project 6 thumbnail"
+           class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
       <div class="absolute bottom-0 left-0 right-0 p-4 bg-black/50">
-        <h3 class="text-lg font-semibold">Content Campaign - Green Future</h3>
+        <h3 class="text-lg font-semibold">Content Campaign – Green Future</h3>
       </div>
     </a>
 
-    <!-- Project 7 -->
-    <a href="#" class="relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform">
-      <img src="project7.webp" alt="Project 7" class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
+    <!-- PROJECT 7 -->
+    <a href="#" class="project-item relative group overflow-hidden rounded-2xl bg-neutral-800 hover:scale-105 transition-transform"
+       data-video="project_video_7.webm"
+    >
+      <img src="project7.webp" alt="Project 7 thumbnail"
+           class="object-cover w-full h-64 opacity-90 group-hover:opacity-100 transition-opacity" />
       <div class="absolute bottom-0 left-0 right-0 p-4 bg-black/50">
-        <h3 class="text-lg font-semibold">Documentary Short - The Journey Home</h3>
+        <h3 class="text-lg font-semibold">Documentary Short – The Journey Home</h3>
       </div>
     </a>
-
   </section>
 
-  <!-- CTA at bottom -->
-  <div class="text-center mt-16 mb-12">
-    <p class="text-lg mb-6 text-gray-400">Feeling inspired? Let's build something extraordinary.</p>
+  <!-- CTA -->
+  <div class="text-center mb-16">
+    <p class="text-lg mb-6 text-gray-300">Feeling inspired? Let’s build something extraordinary.</p>
     <a href="#" class="book-call px-8 py-4 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition">
       Book&nbsp;a&nbsp;Call
     </a>
   </div>
 
-  <!-- Calendly script (working popup) -->
+  <!-- VIDEO MODAL -->
+  <div id="video-modal"
+       class="fixed inset-0 bg-black/80 flex items-center justify-center hidden z-50">
+    <div class="relative w-full max-w-3xl">
+      <button id="modal-close"
+              class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+      <video id="modal-video" class="w-full h-auto" controls>
+        <source src="" type="video/webm">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+  </div>
+
+  <!-- Calendly Popup -->
   <script src="https://assets.calendly.com/assets/external/widget.js"></script>
   <script>
-    document.querySelectorAll('.book-call').forEach(btn => {
-      btn.addEventListener('click', e => {
+    // Calendly on .book-call
+    document.querySelectorAll('.book-call').forEach(btn=>{
+      btn.addEventListener('click', e=>{
         e.preventDefault();
         Calendly.initPopupWidget({
           url: 'https://calendly.com/jakabbenedek2002/discovery-call'
         });
       });
     });
-  </script>
 
+    // Video modal logic
+    document.querySelectorAll('.project-item').forEach(item=>{
+      item.addEventListener('click', e=>{
+        e.preventDefault();
+        const src = item.dataset.video;
+        const videoEl = document.getElementById('modal-video');
+        videoEl.querySelector('source').src = src;
+        videoEl.load();
+        document.getElementById('video-modal').classList.remove('hidden');
+      });
+    });
+    document.getElementById('modal-close').addEventListener('click', ()=>{
+      const modal = document.getElementById('video-modal');
+      const video = document.getElementById('modal-video');
+      video.pause();
+      modal.classList.add('hidden');
+    });
+  </script>
 </body>
 </html>
