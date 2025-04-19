@@ -4,53 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | CrimsonLens</title>
-
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-    /* ↑ Scale all rem‑based text sizes up 25% */
-    html { font-size: 125%; }
-
+    html { font-size:125%; } /* global +25% */
     :root { --burgundy: #e0003c; }
 
-    /* Mobile (portrait) fallback */
+    /* Portrait → Horizontal background */
     #portfolio-bg {
       background-image: url('portfolio_background.webp');
       background-size: cover;
       background-position: center;
     }
-
-    /* Tablet */
     @media (min-width: 640px) {
-      #portfolio-bg {
-        background-image: url('portfolio_background_1080x1920.webp');
-      }
+      #portfolio-bg { background-image: url('portfolio_background_1080x1920.webp'); }
     }
-
-    /* Desktop (horizontal) */
     @media (min-width: 1024px) {
-      #portfolio-bg {
-        background-image: url('portfolio_backround_horizontal.webp');
-      }
+      #portfolio-bg { background-image: url('portfolio_backround_horizontal.webp'); }
     }
   </style>
 </head>
-
 <body class="font-sans text-white">
 
-  <!-- NAVIGATION -->
+  <!-- NAVIGATION (same as home) -->
   <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-lg">
-    <a href="index.html" class="flex items-center gap-2 group" aria-label="Homepage">
-      <img src="logo.webp" alt="CrimsonLens logo" class="w-10 h-10 select-none" />
-      <span class="text-xl font-semibold tracking-wide select-none">
-        <span class="text-white">Crimson</span><span class="text-[var(--burgundy)]">Lens</span>
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="logo.webp" class="w-10 h-10 select-none" alt="Logo" />
+      <span class="text-xl font-semibold select-none">
+        <span class="text-white">Crimson</span>
+        <span class="text-[var(--burgundy)]">Lens</span>
       </span>
     </a>
     <nav class="hidden items-center gap-6 text-sm md:flex">
-      <a href="index.html#services"     class="transition-colors hover:text-[var(--burgundy)]">Services</a>
-      <a href="index.html#testimonials" class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
-      <a href="index.html#contact"      class="book-call ml-8 px-6 py-3 transition rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black">
+      <a href="index.html#services"     class="hover:text-[var(--burgundy)] transition">Services</a>
+      <a href="index.html#testimonials" class="hover:text-[var(--burgundy)] transition">Testimonials</a>
+      <a href="index.html#contact"
+         class="book-call ml-8 px-6 py-3 bg-[var(--burgundy)] hover:bg-white hover:text-black rounded-full transition">
         Book&nbsp;a&nbsp;Call
       </a>
     </nav>
