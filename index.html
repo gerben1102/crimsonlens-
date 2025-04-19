@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CrimsonLens | Visual Storytelling & AI Content</title>
-
-  <!-- Tailwind CSS CDN -->
+  <title>CrimsonLens | Visual Storytelling & AI Content</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-    /* ↑ Scale all rem‑based text sizes up 25% */
-    html { font-size: 125%; }
+    html { font-size:125%; } /* global +25% already in place */
     :root { --burgundy: #e0003c; }
   </style>
 </head>
@@ -18,42 +14,44 @@
 
   <!-- NAVIGATION -->
   <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-lg">
-    <a href="#" class="flex items-center gap-2 group" aria-label="Homepage">
-      <img src="logo.webp" alt="CrimsonLens logo" class="w-10 h-10 select-none" />
-      <span class="text-xl font-semibold tracking-wide select-none">
-        <span class="text-white">Crimson</span><span class="text-[var(--burgundy)]">Lens</span>
+    <a href="#" class="flex items-center gap-2">
+      <img src="logo.webp" class="w-10 h-10 select-none" alt="Logo" />
+      <span class="text-xl font-semibold select-none">
+        <span class="text-white">Crimson</span>
+        <span class="text-[var(--burgundy)]">Lens</span>
       </span>
     </a>
     <nav class="hidden items-center gap-6 text-sm md:flex">
-      <a href="#services"      class="transition-colors hover:text-[var(--burgundy)]">Services</a>
-      <a href="#testimonials"  class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
-      <a href="portfolio.html" class="transition-colors hover:text-[var(--burgundy)]">View Portfolio</a>
-      <a href="#contact"       class="book-call ml-8 px-6 py-3 transition rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black">
+      <a href="#services"      class="hover:text-[var(--burgundy)] transition">Services</a>
+      <a href="#testimonials"  class="hover:text-[var(--burgundy)] transition">Testimonials</a>
+      <a href="portfolio.html" class="hover:text-[var(--burgundy)] transition">View Portfolio</a>
+      <a href="#contact"
+         class="book-call ml-8 px-6 py-3 bg-[var(--burgundy)] hover:bg-white hover:text-black rounded-full transition">
         Book&nbsp;a&nbsp;Call
       </a>
     </nav>
   </header>
 
-  <!-- ▸ HERO -------------------------------------------------------------------------- -->
+  <!-- HERO -->
   <section class="relative flex items-center justify-center min-h-screen pt-24 text-center bg-center bg-cover"
            style="background-image:url('hero_background.webp');">
-    <!-- (no black overlay on hero now) -->
+    <div class="absolute inset-0 bg-black/70"></div>
     <div class="relative z-10 max-w-3xl px-6">
-      <h1 class="mb-3 text-4xl font-bold leading-tight md:text-6xl">
+      <!-- +25% via transform scale -->
+      <h1 class="transform scale-125 origin-center mb-3 text-7xl md:text-9xl font-bold leading-tight">
         Visual Storytelling Meets<br>
         <span class="text-[var(--burgundy)]">AI‑Powered Marketing</span>
       </h1>
-      <h2 class="mb-8 text-xl font-medium text-gray-200 md:text-2xl">
+      <h2 class="mb-8 text-xl md:text-2xl font-medium text-gray-200">
         Ignite emotion. Inspire action. Accelerate growth.
       </h2>
-
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="portfolio.html" class="px-6 py-3 border border-white rounded-full transition hover:bg-white hover:text-black">
+        <a href="portfolio.html"
+           class="px-6 py-3 border border-white rounded-full transition hover:bg-white hover:text-black">
           View&nbsp;Portfolio
         </a>
-
-        <!-- Calendly trigger in hero -->
-        <a href="#" class="book-call px-6 py-3 transition rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black">
+        <a href="#contact"
+           class="book-call px-6 py-3 bg-[var(--burgundy)] hover:bg-white hover:text-black rounded-full transition">
           Book&nbsp;a&nbsp;Call
         </a>
       </div>
