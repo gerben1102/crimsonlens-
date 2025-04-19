@@ -23,23 +23,26 @@
 <body class="font-sans text-white bg-black">
 
   <!-- NAVIGATION -->
-  <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-lg">
-    <a href="#" class="flex items-center gap-2" aria-label="Homepage">
-      <img src="logo.webp" alt="CrimsonLens logo" class="w-10 h-10 select-none" />
-      <span class="text-xl font-semibold tracking-wide select-none">
-        <span class="text-white">Crimson</span><span class="text-[var(--burgundy)]">Lens</span>
-      </span>
-    </a>
-    <nav class="hidden items-center gap-6 text-sm md:flex">
-      <a href="#services" class="transition-colors hover:text-[var(--burgundy)]">Services</a>
-      <a href="#testimonials" class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
-      <a href="portfolio.html" class="transition-colors hover:text-[var(--burgundy)]">View Portfolio</a>
+  " class="hidden flex-col bg-black/90 md:bg-transparent md:flex md:flex-row md:items-center md:gap-6 text-sm">
+      <a href="#services"      class="block px-6 py-2 md:py-0 hover:text-[var(--burgundy)] transition">Services</a>
+      <a href="#testimonials"  class="block px-6 py-2 md:py-0 hover:text-[var(--burgundy)] transition">Testimonials</a>
+      <a href="portfolio.html" class="block px-6 py-2 md:py-0 hover:text-[var(--burgundy)] transition">View Portfolio</a>
       <a href="#contact"
-         class="book-call ml-8 px-6 py-3 transition rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black">
-        Book&nbsp;a&nbsp;Call
+         class="book-call block px-6 py-2 md:py-0 md:ml-8 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition text-center">
+        Book a Call
       </a>
     </nav>
-  </header>
+
+  </div>
+</header>
+
+<script>
+  // Only run the toggle logic on small screens
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    // On md+ the CSS (md:flex) will always show the nav, even if 'hidden' is toggled here
+    document.getElementById('nav-menu').classList.toggle('hidden');
+  });
+</script>
 
   <!-- HERO -->
   <section class="relative flex items-center justify-center min-h-screen pt-24 text-center bg-center bg-cover"
