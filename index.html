@@ -204,14 +204,18 @@
     });
   </script>
 
-  <!-- CALENDLY POPUP SCRIPT -->
+  <!-- 1) Load Calendly synchronously (remove async)    -->
   <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+  <!-- 2) Only attach handlers once DOM (and Calendly) are ready -->
   <script>
-    document.querySelectorAll('.book-call').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        Calendly.initPopupWidget({
-          url: 'https://calendly.com/jakabbenedek2002/discovery-call'
+    window.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.book-call').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          Calendly.initPopupWidget({
+            url: 'https://calendly.com/jakabbenedek2002/discovery-call'
+          });
         });
       });
     });
