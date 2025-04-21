@@ -22,7 +22,7 @@
 </head>
 <body class="font-sans text-white bg-black">
 
-<!-- ── HEADER + MOBILE NAV (in place of your existing header) ──────────────── -->
+<!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
 <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-lg">
   <!-- Logo -->
   <a href="#" class="flex items-center gap-2" aria-label="Homepage">
@@ -36,14 +36,14 @@
   <nav class="hidden md:flex items-center gap-6 text-sm">
     <a href="#services"      class="transition-colors hover:text-[var(--burgundy)]">Services</a>
     <a href="#testimonials"  class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
-    <a href="portfolio.html" class="transition-colors hover:text-[var(--burgundy)]">View Portfolio</a>
+    <a href="portfolio.html" class="transition-colors hover:text-[var(--burgundy)]">View Portfolio</a>
     <a href="#contact"
        class="book-call ml-8 px-6 py-3 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition">
-      Book a Call
+      Book&nbsp;a&nbsp;Call
     </a>
   </nav>
 
-  <!-- Hamburger (sm/md) -->
+  <!-- Hamburger (shown on <md) -->
   <button id="nav-toggle" class="md:hidden p-2 text-white focus:outline-none" aria-label="Toggle menu">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -52,38 +52,37 @@
   </button>
 </header>
 
-<!-- MOBILE DROP‑DOWN MENU -->
+<!-- ── MOBILE DROPDOWN (hidden by default) ─────────────────────────────────── -->
 <nav id="mobile-nav"
-     class="hidden absolute top-full inset-x-0 bg-black/90 flex flex-col items-center space-y-4 py-4 text-lg z-50">
+     class="hidden absolute top-16 inset-x-0 bg-black/90 flex flex-col items-center space-y-4 py-4 text-lg z-40">
   <a href="#services"      class="text-white hover:text-[var(--burgundy)]">Services</a>
   <a href="#testimonials"  class="text-white hover:text-[var(--burgundy)]">Testimonials</a>
-  <a href="portfolio.html" class="text-white hover:text-[var(--burgundy)]">View Portfolio</a>
+  <a href="portfolio.html" class="text-white hover:text-[var(--burgundy)]">View Portfolio</a>
   <a href="#contact"
      class="book-call px-6 py-2 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition">
-    Book a Call
+    Book a Call
   </a>
 </nav>
 
+<!-- ── TOGGLE SCRIPT (just before </body>) ────────────────────────────────── -->
 <script>
-  const toggle = document.getElementById('nav-toggle');
-  const mobileNav = document.getElementById('mobile-nav');
+  window.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
 
-  // Open/close on hamburger click
-  toggle.addEventListener('click', e => {
-    e.stopPropagation();
-    mobileNav.classList.toggle('hidden');
-  });
+    // Open/close on hamburger click
+    toggle.addEventListener('click', e => {
+      e.stopPropagation();
+      mobileNav.classList.toggle('hidden');
+    });
 
-  // Prevent clicks inside the menu from closing it
-  mobileNav.addEventListener('click', e => {
-    e.stopPropagation();
-  });
+    // Prevent clicks inside the menu from closing it
+    mobileNav.addEventListener('click', e => e.stopPropagation());
 
-  // Clicking anywhere else closes the menu
-  document.addEventListener('click', () => {
-    if (!mobileNav.classList.contains('hidden')) {
+    // Clicking the rest of the page closes the menu
+    document.addEventListener('click', () => {
       mobileNav.classList.add('hidden');
-    }
+    });
   });
 </script>
   
