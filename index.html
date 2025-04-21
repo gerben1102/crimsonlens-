@@ -22,43 +22,55 @@
 </head>
 <body class="font-sans text-white bg-black">
 
-<header class="fixed inset-x-0 top-0 z-50 bg-black/80 backdrop-blur-lg">
-  <div class="flex items-center justify-between px-6 py-4">
+<!-- HEADER (desktop nav unchanged) -->
+<header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-lg">
+  <!-- Logo -->
+  <a href="#" class="flex items-center gap-2" aria-label="Homepage">
+    <img src="logo.webp" alt="CrimsonLens logo" class="w-10 h-10 select-none" />
+    <span class="text-xl font-semibold tracking-wide select-none">
+      <span class="text-white">Crimson</span><span class="text-[var(--burgundy)]">Lens</span>
+    </span>
+  </a>
 
-    <!-- LOGO -->
-    <a href="#" class="flex items-center gap-2" aria-label="Homepage">
-      <img src="logo.webp" alt="CrimsonLens logo" class="w-10 h-10 select-none" />
-      <span class="text-xl font-semibold tracking-wide select-none">
-        <span class="text-white">Crimson</span><span class="text-[var(--burgundy)]">Lens</span>
-      </span>
+  <!-- Desktop nav (only on md+) -->
+  <nav class="hidden md:flex items-center gap-6 text-sm">
+    <a href="#services"      class="transition-colors hover:text-[var(--burgundy)]">Services</a>
+    <a href="#testimonials"  class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
+    <a href="portfolio.html" class="transition-colors hover:text-[var(--burgundy)]">View Portfolio</a>
+    <a href="#contact"
+       class="book-call ml-8 px-6 py-3 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition">
+      Book a Call
     </a>
+  </nav>
 
-    <!-- HAMBURGER BUTTON (shown on md and below) -->
-    <button id="nav-toggle" class="md:hidden p-2 focus:outline-none" aria-label="Toggle menu">
-      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-
-    <!-- NAV LINKS: hidden on md‑down, flex on lg‑up -->
-    <nav id="nav-menu" class="hidden flex-col bg-black/90 md:bg-transparent md:flex md:flex-row md:items-center md:gap-6 text-sm">
-      <a href="#services"     class="block px-6 py-2 md:py-0 hover:text-[var(--burgundy)] transition">Services</a>
-      <a href="#testimonials" class="block px-6 py-2 md:py-0 hover:text-[var(--burgundy)] transition">Testimonials</a>
-      <a href="portfolio.html" class="block px-6 py-2 md:py-0 hover:text-[var(--burgundy)] transition">View Portfolio</a>
-      <a href="#contact"
-         class="book-call block px-6 py-2 md:py-0 md:ml-8 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition text-center">
-        Book a Call
-      </a>
-    </nav>
-  </div>
+  <!-- Hamburger (only on smaller than md) -->
+  <button id="nav-toggle" class="md:hidden p-2 text-white focus:outline-none" aria-label="Toggle menu">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
 </header>
 
+<!-- MOBILE MENU OVERLAY -->
+<nav id="mobile-nav"
+     class="hidden fixed inset-0 bg-black/90 flex flex-col items-center justify-center space-y-6 text-xl z-50">
+  <a href="#services"      class="text-white hover:text-[var(--burgundy)]">Services</a>
+  <a href="#testimonials"  class="text-white hover:text-[var(--burgundy)]">Testimonials</a>
+  <a href="portfolio.html" class="text-white hover:text-[var(--burgundy)]">View Portfolio</a>
+  <a href="#contact"
+     class="book-call px-6 py-3 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition">
+    Book a Call
+  </a>
+</nav>
+
+<!-- TOGGLE SCRIPT (place just before </body>) -->
 <script>
-  document.getElementById('nav-toggle').addEventListener('click', () => {
-    document.getElementById('nav-menu').classList.toggle('hidden');
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    document.getElementById('mobile-nav').classList.toggle('hidden');
   });
 </script>
+
   
   <!-- HERO -->
   <section class="relative flex items-center justify-center min-h-screen pt-24 text-center bg-center bg-cover"
