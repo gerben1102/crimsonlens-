@@ -12,6 +12,20 @@
     header nav a {
       font-size: 1.25em;
     }
+
+    /* ── Custom breakpoint at 780px ────────────────────────────────── */
+    /* below 780px: hide desktop nav, show hamburger */
+    @media (max-width: 780px) {
+      header nav { display: none !important; }
+      #nav-toggle { display: block !important; }
+    }
+    /* at or above 780px: show desktop nav, hide hamburger & mobile dropdown */
+    @media (min-width: 780px) {
+      header nav { display: flex !important; }
+      #nav-toggle,
+      #mobile-nav { display: none !important; }
+    }
+    
     /* Single horizontal background, just like on home */
     #portfolio-bg {
       background-image: url('portfolio_backround_horizontal.webp');
@@ -26,23 +40,67 @@
 </head>
 <body class="font-sans text-white">
 
-  <!-- NAVIGATION (same as home) -->
+  <!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
   <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-lg">
-    <a href="index.html" class="flex items-center gap-2 group" aria-label="Homepage">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2" aria-label="Homepage">
       <img src="logo.webp" alt="CrimsonLens logo" class="w-10 h-10 select-none" />
-        <span class="text-xl font-semibold tracking-wide select-none">
+      <span class="text-xl font-semibold tracking-wide select-none">
         <span class="text-white">Crimson</span><span class="text-[var(--burgundy)]">Lens</span>
       </span>
     </a>
-    <nav class="hidden items-center gap-6 text-sm md:flex">
-      <a href="index.html#services"     class="hover:text-[var(--burgundy)] transition">Services</a>
-      <a href="index.html#testimonials" class="hover:text-[var(--burgundy)] transition">Testimonials</a>
-      <a href="index.html#contact"
-         class="book-call ml-8 px-6 py-3 bg-[var(--burgundy)] hover:bg-white hover:text-black rounded-full transition">
-        Book&nbsp;a&nbsp;Call
+    <!-- Desktop nav (hidden by default, shown ≥780px) -->
+    <nav class="hidden items-center gap-6 text-sm">
+      <a href="#services"      class="transition-colors hover:text-[var(--burgundy)]">Services</a>
+      <a href="#testimonials"  class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
+      <a href="#"              class="transition-colors hover:text-[var(--burgundy)]">Selected Works</a>
+      <a href="#contact"
+         class="book-call ml-8 px-6 py-3 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition">
+        Book a Call
       </a>
     </nav>
+    <!-- Hamburger (hidden by default, shown <780px) -->
+    <button id="nav-toggle" class="hidden p-2 text-white focus:outline-none" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
   </header>
+
+  <!-- ── MOBILE DROPDOWN (hidden by default) ─────────────────────────────────── -->
+  <nav id="mobile-nav"
+       class="hidden absolute top-16 inset-x-0 bg-black flex flex-col items-center space-y-4 py-8 text-lg z-40">
+    <a href="#services"      class="text-white hover:text-[var(--burgundy)]">Services</a>
+    <a href="#testimonials"  class="text-white hover:text-[var(--burgundy)]">Testimonials</a>
+    <a href="#"              class="text-white hover:text-[var(--burgundy)]">Selected Works</a>
+    <a href="#contact"
+       class="book-call px-6 py-2 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition">
+      Book a Call
+    </a>
+  </nav>
+
+  <!-- ── TOGGLE SCRIPT (just before </body>) ────────────────────────────────── -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('nav-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+
+      // Open/close on hamburger click
+      toggle.addEventListener('click', e => {
+        e.stopPropagation();
+        mobileNav.classList.toggle('hidden');
+      });
+
+      // Prevent clicks inside the menu from closing it
+      mobileNav.addEventListener('click', e => e.stopPropagation());
+
+      // Clicking the rest of the page closes the menu
+      document.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+      });
+    });
+  </script>
   
   <!-- PORTFOLIO CONTENT WITH RESPONSIVE BACKGROUND -->
   <div id="portfolio-bg" class="min-h-screen pt-32 pb-16">
