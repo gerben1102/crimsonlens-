@@ -4,42 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | CrimsonLens</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-    html { font-size:125%; } /* global +25% */
+    html { font-size: 125%; } /* global +25% text */
     :root { --burgundy: #e0003c; }
+
     /* ↑ Increase nav link font-size by 25% */
     header nav a {
       font-size: 1.25em;
     }
 
     /* ── Custom breakpoint at 780px ────────────────────────────────── */
-    /* below 780px: hide desktop nav, show hamburger */
     @media (max-width: 780px) {
       header nav { display: none !important; }
       #nav-toggle { display: block !important; }
     }
-    /* at or above 780px: show desktop nav, hide hamburger & mobile dropdown */
     @media (min-width: 780px) {
       header nav { display: flex !important; }
       #nav-toggle,
       #mobile-nav { display: none !important; }
     }
-    
-    /* Single horizontal background, just like on home */
+
+    /* Horizontal portfolio background */
     #portfolio-bg {
       background-image: url('portfolio_backround_horizontal.webp');
       background-size: cover;
       background-position: center;
     }
   </style>
-  <link
-    href="https://assets.calendly.com/assets/external/widget.css"
-    rel="stylesheet"
-  />
-</head>
-<body class="font-sans text-white">
 
+  <!-- Calendly CSS (for popup) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+</head>
+<body class="font-sans text-white bg-black">
+  
   <!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
   <header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-lg">
     <!-- Logo -->
@@ -51,9 +52,9 @@
     </a>
 
     <!-- Desktop nav (hidden by default, shown ≥780px) -->
-    <nav class="hidden items-center gap-6 text-sm">
-      <a href="#services"      class="transition-colors hover:text-[var(--burgundy)]">Services</a>
-      <a href="#testimonials"  class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="index.html#services"     class="transition-colors hover:text-[var(--burgundy)]">Services</a>
+      <a href="index.html#testimonials" class="transition-colors hover:text-[var(--burgundy)]">Testimonials</a>
       <a href="#contact"
          class="book-call ml-8 px-6 py-3 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition">
         Book a Call
@@ -72,30 +73,28 @@
   <!-- ── MOBILE DROPDOWN (hidden by default) ─────────────────────────────────── -->
   <nav id="mobile-nav"
        class="hidden absolute top-16 inset-x-0 bg-black flex flex-col items-center space-y-4 py-8 text-lg z-40">
-    <a href="#services"      class="text-white hover:text-[var(--burgundy)]">Services</a>
-    <a href="#testimonials"  class="text-white hover:text-[var(--burgundy)]">Testimonials</a>
+    <a href="index.html#services"     class="text-white hover:text-[var(--burgundy)]">Services</a>
+    <a href="index.html#testimonials" class="text-white hover:text-[var(--burgundy)]">Testimonials</a>
     <a href="#contact"
        class="book-call px-6 py-2 rounded-full bg-[var(--burgundy)] hover:bg-white hover:text-black transition">
       Book a Call
     </a>
   </nav>
 
-  <!-- ── TOGGLE SCRIPT (just before </body>) ────────────────────────────────── -->
+  <!-- ── TOGGLE SCRIPT ──────────────────────────────────────────────────────── -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      const toggle = document.getElementById('nav-toggle');
+      const toggle    = document.getElementById('nav-toggle');
       const mobileNav = document.getElementById('mobile-nav');
 
-      // Open/close on hamburger click
+      // toggle dropdown
       toggle.addEventListener('click', e => {
         e.stopPropagation();
         mobileNav.classList.toggle('hidden');
       });
-
-      // Prevent clicks inside the menu from closing it
+      // prevent inside clicks from closing
       mobileNav.addEventListener('click', e => e.stopPropagation());
-
-      // Clicking the rest of the page closes the menu
+      // click outside closes
       document.addEventListener('click', () => {
         mobileNav.classList.add('hidden');
       });
